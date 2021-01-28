@@ -80,6 +80,71 @@ mysql> select * from Configuration;
 |      21 | music system                 | accessories | yes          |      1 |
 |      22 | car cover                    | accessories | yes          |      1 |
 |      23 | radio                        | accessories | yes          |      1 |
+
+
+
+shubham@shubham-HP-Notebook:~/Work/VehicleConfigurator$ mysql -u root -p
+Enter password: 
+ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+shubham@shubham-HP-Notebook:~/Work/VehicleConfigurator$ sudo mysql
+[sudo] password for shubham: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.0.22-0ubuntu0.20.04.3 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+Query OK, 0 rows affected (1.80 sec)
+
+mysql> exit;
+Bye
+shubham@shubham-HP-Notebook:~/Work/VehicleConfigurator$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+shubham@shubham-HP-Notebook:~/Work/VehicleConfigurator$ sudo service mysql restart
+shubham@shubham-HP-Notebook:~/Work/VehicleConfigurator$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+shubham@shubham-HP-Notebook:~/Work/VehicleConfigurator$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.22-0ubuntu0.20.04.3 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| information_schema  |
+| mysql               |
+| performance_schema  |
+| sys                 |
+| vehicleconfigurator |
++---------------------+
+5 rows in set (0.10 sec)
+
+mysql> use vehicleconfigurator;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+
 +---------+------------------------------+-------------+--------------+--------+
 23 rows in set (0.00 sec)
 
