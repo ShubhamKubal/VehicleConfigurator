@@ -20,5 +20,9 @@ public class VariantService {
 	public List<Variant> listAll(){
 		return variantRepo.findAll();
 	}
+	
+	public List<Variant> listBySegidAndManid(String segid,String manid){
+		return variantRepo.findBySedidAndManid(Long.parseLong(segid), Long.parseLong(manid));
+	}
 
 }

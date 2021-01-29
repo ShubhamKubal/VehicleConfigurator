@@ -25,7 +25,8 @@ table creation:
 	min_qty INT NOT NULL,
 	base_price DECIMAL NOT NULL,
 	seg_id INT,
-	man_id INT, 
+	man_id INT,
+	image_path VARCHAR(50), 
 	PRIMARY KEY ( var_id ),
 	FOREIGN KEY (seg_id) REFERENCES Segment(seg_id),
 	FOREIGN KEY (man_id) REFERENCES Manufacturer(man_id)	
