@@ -1,5 +1,8 @@
 package com.freelance.training.vehicle.models;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,7 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -25,6 +30,11 @@ public class Configuration {
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "var_id", nullable = false, insertable=false, updatable=false)
 	private Variant variant;
+	
+	@OneToMany(mappedBy = "configuration", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<AlternateConf> alternateconfs;
 	
 	public Long getConf_id() {
 		return conf_id;
@@ -62,5 +72,12 @@ public class Configuration {
 	public void setVariant(Variant variant) {
 		this.variant = variant;
 	}
+	public Set<AlternateConf> getAlternateconfs() {
+		return alternateconfs;
+	}
+	public void setAlternateconfs(Set<AlternateConf> alternateconfs) {
+		this.alternateconfs = alternateconfs;
+	}
+	
 	
 }
