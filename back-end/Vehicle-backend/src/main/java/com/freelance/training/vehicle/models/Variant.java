@@ -35,6 +35,9 @@ public class Variant {
 //	@Column(insertable=false, updatable=false)
 	private Manufacturer manufacturer;
 	
+	private String image_path;
+	
+	
 	public Long getVar_id() {
 		return var_id;
 	}
@@ -83,5 +86,13 @@ public class Variant {
 	public void setManufacturer(Manufacturer manufacturer) {
 		this.manufacturer = manufacturer;
 	}
+	public String getImage_path() {
+		return image_path;
+	}
+	public void setImage_path(String image_path) {
+		this.image_path = image_path;
+	}
+	
+	
 
 }
