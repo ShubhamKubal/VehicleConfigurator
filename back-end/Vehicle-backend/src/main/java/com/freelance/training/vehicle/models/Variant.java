@@ -1,6 +1,8 @@
 package com.freelance.training.vehicle.models;
 
-import javax.persistence.Column;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -23,19 +27,23 @@ public class Variant {
 	private double base_price;
 	private Long seg_id;
 	private Long man_id;
+	private String image_path;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "seg_id", nullable = false, insertable=false, updatable=false)
-//	@Column(insertable=false, updatable=false)
 	private Segment segment;
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "man_id", nullable = false, insertable=false, updatable=false)
-//	@Column(insertable=false, updatable=false)
 	private Manufacturer manufacturer;
 	
-	private String image_path;
+	
+	
+	@OneToMany(mappedBy = "variant", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Configuration> configurations;
 	
 	
 	public Long getVar_id() {
@@ -91,6 +99,12 @@ public class Variant {
 	}
 	public void setImage_path(String image_path) {
 		this.image_path = image_path;
+	}
+	public Set<Configuration> getConfigurations() {
+		return configurations;
+	}
+	public void setConfigurations(Set<Configuration> configurations) {
+		this.configurations = configurations;
 	}
 	
 	

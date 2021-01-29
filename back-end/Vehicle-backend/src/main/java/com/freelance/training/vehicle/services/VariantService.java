@@ -22,7 +22,7 @@ public class VariantService {
 	}
 	
 	public List<Variant> listBySegidAndManid(String segid,String manid){
-		return variantRepo.findBySedidAndManid(Long.parseLong(segid), Long.parseLong(manid));
+		return variantRepo.findBySegidAndManid(Long.parseLong(segid), Long.parseLong(manid));
 	}
 
 }
