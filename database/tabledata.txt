@@ -148,3 +148,27 @@ Database changed
 +---------+------------------------------+-------------+--------------+--------+
 23 rows in set (0.00 sec)
 
+
+
+
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| company_id     | int          | NO   | PRI | NULL    | auto_increment |
+| company_name   | varchar(50)  | NO   |     | NULL    |                |
+| login_id       | varchar(50)  | NO   | UNI | NULL    |                |
+| password       | varchar(50)  | NO   |     | NULL    |                |
+| customer_name  | varchar(50)  | NO   |     | NULL    |                |
+| designation    | varchar(50)  | NO   |     | NULL    |                |
+| email_id       | varchar(50)  | NO   | UNI | NULL    |                |
+| address_line_1 | varchar(100) | NO   |     | NULL    |                |
+| address_line_2 | varchar(100) | YES  |     | NULL    |                |
+| city           | varchar(50)  | NO   |     | NULL    |                |
+| state          | varchar(50)  | NO   |     | NULL    |                |
+| pincode        | int          | NO   |     | NULL    |                |
+| company_tel    | varchar(15)  | YES  |     | NULL    |                |
+| customer_mob   | varchar(15)  | YES  |     | NULL    |                |
+| vat_no         | varchar(15)  | YES  |     | NULL    |                |
+| pan_no         | varchar(15)  | NO   | UNI | NULL    |                |
+| holding        | varchar(15)  | YES  |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+

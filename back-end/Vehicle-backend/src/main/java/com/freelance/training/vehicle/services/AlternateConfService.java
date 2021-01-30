@@ -20,5 +20,9 @@ public class AlternateConfService {
 	public List<AlternateConf> listAll(){
 		return altRepo.findAll();
 	}
+	
+	public List<AlternateConf> listAllByConfid(String confid){
+		return altRepo.findByConfid(Long.parseLong(confid));
+	}
 
 }

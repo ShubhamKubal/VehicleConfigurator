@@ -11,5 +11,29 @@ public interface ConfigurationRepository extends JpaRepository<Configuration, Lo
 	
 	@Query( value = "SELECT * FROM configuration c where c.var_id=?1", nativeQuery = true)
 	public List<Configuration> findByVarId(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='default'", nativeQuery = true)
+	public List<Configuration> findDefaultByVarid(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='internal'", nativeQuery = true)
+	public List<Configuration> findInteriorByVarid(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='external'", nativeQuery = true)
+	public List<Configuration> findExteriorByVarid(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='accessories'", nativeQuery = true)
+	public List<Configuration> findAccessoriesByVarid(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='default' and c.configurable='yes'", nativeQuery = true)
+	public List<Configuration> findDefaultConfigurableByVarid(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='internal' and c.configurable='yes'", nativeQuery = true)
+	public List<Configuration> findInteriorConfigurableByVarid(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='external' and c.configurable='yes'", nativeQuery = true)
+	public List<Configuration> findExteriorConfigurableByVarid(Long varid);
+	
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='accessories' and c.configurable='yes'", nativeQuery = true)
+	public List<Configuration> findAccessoriesConfigurableByVarid(Long varid);
 
 }
