@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.freelance.training.vehicle.models.AlternateConf;
 import com.freelance.training.vehicle.services.AlternateConfService;
 
+/**
+ * This class is responsible for the CRUD operations on alternate_conf table in the database.
+ * @author shubham
+ * 
+ */
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin( origins = "http://localhost:4200")
@@ -20,11 +25,20 @@ public class AlternateConfController {
 	@Autowired
 	private AlternateConfService altService;
 	
+	/**
+	 * returns all alternate configurations from alternate_conf table
+	 * @return List<AlternateConf>
+	 */
 	@GetMapping("/alternateconfs")
 	public List<AlternateConf> list(){
 		return altService.listAll();
 	}
 	
+	/**
+	 * return alternate configurations from alternate_conf table for the particular configuration
+	 * @param confid
+	 * @return List<AlternateConf>
+	 */
 	@GetMapping("/alternateconfs/{confid}")
 	public List<AlternateConf> listByConfid(@PathVariable String confid){
 		return altService.listAllByConfid(confid);

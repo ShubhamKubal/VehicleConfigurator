@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.freelance.training.vehicle.models.Customer;
 import com.freelance.training.vehicle.services.CustomerService;
 
+/**
+ * This class is responsible for the CRUD operations on customers table in the database.
+ * @author shubham
+ * 
+ */
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin( origins = "http://localhost:4200")
@@ -21,11 +26,20 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	/**
+	 * returns customers from customer table
+	 * @return List<Customer>
+	 */
 	@GetMapping("/customers")
 	public List<Customer> list(){
 		return customerService.listAll();
 	}
 	
+	/**
+	 * persists the customer into database and returns that customer
+	 * @param customer
+	 * @return Customer
+	 */
 	@PostMapping("/register")
 	public Customer register(@RequestBody Customer customer) {
 		return customerService.add(customer);

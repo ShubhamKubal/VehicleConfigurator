@@ -10,6 +10,11 @@ import org.springframework.stereotype.Service;
 import com.freelance.training.vehicle.models.Segment;
 import com.freelance.training.vehicle.repositories.SegmentRepository;
 
+/**
+ * communicates with DAO layer to perform CRUD operations on segment table
+ * @author shubham
+ *
+ */
 @Service
 @Transactional
 public class SegmentService {
@@ -17,6 +22,10 @@ public class SegmentService {
 	@Autowired
 	private SegmentRepository segmentRepo;
 	
+	/**
+	 * returns segments from segment table
+	 * @return List<Segment>
+	 */
 	public List<Segment> listAll(){
 		return segmentRepo.findAll();
 	}

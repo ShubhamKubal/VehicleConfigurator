@@ -10,6 +10,11 @@ import org.springframework.stereotype.Service;
 import com.freelance.training.vehicle.models.Manufacturer;
 import com.freelance.training.vehicle.repositories.ManufacturerRepository;
 
+/**
+ * communicates with DAO layer to perform CRUD operations on manufacturer table
+ * @author shubham
+ *
+ */
 @Service
 @Transactional
 public class ManufacturerService {
@@ -17,6 +22,10 @@ public class ManufacturerService {
 	@Autowired
 	private ManufacturerRepository manRepo;
 	
+	/**
+	 * returns manufacturers from manufacturer table
+	 * @return List<Manufacturer>
+	 */
 	public List<Manufacturer> listAll(){
 		return manRepo.findAll();
 	}

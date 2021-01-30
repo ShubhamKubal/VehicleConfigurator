@@ -7,6 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.freelance.training.vehicle.models.Variant;
 
+/**
+ * provides implementation of CRUD operations for variant table
+ * @author shubham
+ * 
+ */
 public interface VariantRepository extends JpaRepository<Variant, Long> {
 	
 	@Query( value = "SELECT * FROM variant v WHERE v.seg_id=?1 and v.man_id=?2", nativeQuery = true)

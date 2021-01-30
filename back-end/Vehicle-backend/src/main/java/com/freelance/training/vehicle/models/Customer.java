@@ -8,6 +8,11 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * POJO for the customer table in the database
+ * @author shubham
+ * 
+ */
 @Entity
 @JsonIgnoreProperties( { "hibernateLazyInitializer", "handler" } )
 public class Customer {

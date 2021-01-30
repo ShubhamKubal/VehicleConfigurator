@@ -13,6 +13,11 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * POJO for the manufacturer table in the database
+ * @author shubham
+ * 
+ */
 @Entity
 @JsonIgnoreProperties( { "hibernateLazyInitializer", "handler" } )
 public class Manufacturer {

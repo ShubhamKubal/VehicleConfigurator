@@ -7,6 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.freelance.training.vehicle.models.Configuration;
 
+/**
+ * provides implementation of CRUD operations for configuration table
+ * @author shubham
+ */
 public interface ConfigurationRepository extends JpaRepository<Configuration, Long> {
 	
 	@Query( value = "SELECT * FROM configuration c where c.var_id=?1", nativeQuery = true)

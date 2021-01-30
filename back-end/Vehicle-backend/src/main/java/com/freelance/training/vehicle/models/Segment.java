@@ -13,6 +13,11 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * POJO for the segment table in database
+ * @author shubham
+ * 
+ */
 @Entity
 @JsonIgnoreProperties( { "hibernateLazyInitializer", "handler" } )
 public class Segment {

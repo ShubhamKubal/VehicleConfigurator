@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.freelance.training.vehicle.models.Manufacturer;
 import com.freelance.training.vehicle.services.ManufacturerService;
 
+/**
+ * This class is responsible for the CRUD operations on manufacturer table in the database.
+ * @author shubham
+ * 
+ */
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin( origins = "http://localhost:4200")
@@ -19,6 +24,10 @@ public class ManufacturerController {
 	@Autowired
 	private ManufacturerService manService;
 	
+	/**
+	 * returns manufacturers from manufacturer table
+	 * @return List<Manufacturer>
+	 */
 	@GetMapping("/manufacturers")
 	public List<Manufacturer> list(){
 		return manService.listAll();

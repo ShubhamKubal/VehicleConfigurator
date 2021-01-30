@@ -10,6 +10,11 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * POJO for the alternate_conf table in database
+ * @author shubham
+ * 
+ */
 @Entity
 @JsonIgnoreProperties( { "hibernateLazyInitializer", "handler" } )
 public class AlternateConf {
