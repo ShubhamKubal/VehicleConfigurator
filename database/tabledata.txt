@@ -172,3 +172,22 @@ Database changed
 | pan_no         | varchar(15)  | NO   | UNI | NULL    |                |
 | holding        | varchar(15)  | YES  |     | NULL    |                |
 +----------------+--------------+------+-----+---------+----------------+
+
+{
+"company_name":"cardekho"
+"login_id":"cardekho"
+"password":"cardekho123"
+"customer_name":"shubham"
+"designation":"manager"
+"email_id":"cardekho@abc.com"
+"address_line_1":"street1"
+"address_line_2":"road1"
+"city":"mumbai"
+"state":"maharashtra"
+"pincode":400002
+"company_tel":"1234"
+"customer_mob":"1234"
+"vat_no":"1234"
+"pan_no":"1234"
+"holding":"abc"
+}
