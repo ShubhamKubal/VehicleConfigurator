@@ -38,4 +38,12 @@ public class CustomerService {
 	public Customer add(Customer customer) {
 		return customerRepo.saveAndFlush(customer);
 	}
+	
+	public String checkLoginCredentials(String loginid, String password) {
+		List<Customer> customers = customerRepo.findByLoginIdandPassword(loginid, password);
+		if (customers.size() > 0)
+			return customers.get(0).getCompany_id().toString();
+		else
+			return "0";
+	}
 }

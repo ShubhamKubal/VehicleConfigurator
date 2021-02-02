@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,6 +44,11 @@ public class CustomerController {
 	@PostMapping("/register")
 	public Customer register(@RequestBody Customer customer) {
 		return customerService.add(customer);
+	}
+	
+	@GetMapping("/check/{loginid}/{password}")
+	public String checkCredentials(@PathVariable String loginid,@PathVariable String password) {
+		return customerService.checkLoginCredentials(loginid, password);
 	}
 
 }
