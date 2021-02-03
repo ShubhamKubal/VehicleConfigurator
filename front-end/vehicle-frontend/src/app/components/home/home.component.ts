@@ -48,7 +48,15 @@ export class HomeComponent implements OnInit {
 
   listVariants(){
     this._variantService.getAllVariantsBySegidAndManid(this.seg_id,this.man_id).subscribe(
-      (data) => this.variants = data
+      (data) =>
+      {
+        this.variants = data
+        console.log(this.variants.length);
+        if (this.variants.length == 0)
+            this.varFound = true;
+        else
+            this.varFound = false;    
+      } 
     );
   }
 
@@ -62,10 +70,7 @@ export class HomeComponent implements OnInit {
     this.man_id = event.target.value;
     console.log(this.man_id);
     this.listVariants();
-    if (this.variants.length == 0)
-        this.varFound = false;
-    else
-        this.varFound = true;    
+    
   }
 
   sendVarid(event:any, v:Variant[]){
@@ -78,6 +83,7 @@ export class HomeComponent implements OnInit {
         this.min_qty = variant.min_qty;
       
     }
+    this._variantService.setVariantId(this.var_id);
   }
 
   nextPage()

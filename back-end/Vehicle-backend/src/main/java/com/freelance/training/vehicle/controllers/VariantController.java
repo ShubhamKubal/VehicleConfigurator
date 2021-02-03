@@ -1,6 +1,7 @@
 package com.freelance.training.vehicle.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -43,6 +44,16 @@ public class VariantController {
 	@GetMapping("/variants/{segid}/{manid}")
 	public List<Variant> listBySegidAndManid(@PathVariable String segid,@PathVariable String manid){
 		return variantService.listBySegidAndManid(segid,manid);
+	}
+	
+	/**
+	 * returns variant details based on the var_id
+	 * @param varid
+	 * @return Variant
+	 */
+	@GetMapping("/variants/{varid}")
+	public Optional<Variant> getVariant(@PathVariable String varid) {
+		return variantService.getVariant(varid);
 	}
 
 }

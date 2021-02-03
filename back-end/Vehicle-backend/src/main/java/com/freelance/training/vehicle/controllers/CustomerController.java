@@ -46,6 +46,14 @@ public class CustomerController {
 		return customerService.add(customer);
 	}
 	
+	/**
+	 * 
+	 * checks the given login_id and password present in the customer table of the database
+	 * return comapny_id if present else 0 
+	 * @param loginid
+	 * @param password
+	 * @return String comapny_id/0
+	 */
 	@GetMapping("/check/{loginid}/{password}")
 	public String checkCredentials(@PathVariable String loginid,@PathVariable String password) {
 		return customerService.checkLoginCredentials(loginid, password);

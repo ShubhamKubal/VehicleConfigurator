@@ -1,6 +1,7 @@
 package com.freelance.training.vehicle.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -38,6 +39,15 @@ public class VariantService {
 	 */
 	public List<Variant> listBySegidAndManid(String segid,String manid){
 		return variantRepo.findBySegidAndManid(Long.parseLong(segid), Long.parseLong(manid));
+	}
+	
+	/**
+	 * returns variant details based on the var_id
+	 * @param varid
+	 * @return Variant
+	 */
+	public Optional<Variant> getVariant(String varid) {
+		return variantRepo.findById(Long.parseLong(varid));
 	}
 
 }

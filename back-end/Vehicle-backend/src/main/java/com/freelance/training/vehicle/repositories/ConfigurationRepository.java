@@ -19,10 +19,10 @@ public interface ConfigurationRepository extends JpaRepository<Configuration, Lo
 	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='default'", nativeQuery = true)
 	public List<Configuration> findDefaultByVarid(Long varid);
 	
-	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='internal'", nativeQuery = true)
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='interior'", nativeQuery = true)
 	public List<Configuration> findInteriorByVarid(Long varid);
 	
-	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='external'", nativeQuery = true)
+	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='exterior'", nativeQuery = true)
 	public List<Configuration> findExteriorByVarid(Long varid);
 	
 	@Query( value = "SELECT * FROM configuration c where c.var_id=?1 and c.type='accessories'", nativeQuery = true)
