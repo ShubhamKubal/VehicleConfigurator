@@ -24,7 +24,7 @@ export class StandardComponent implements OnInit {
   public alternateConfs : AlternateConf[] = [];
   public variant : Variant = new Variant(0,'',0,0,0,0,'');  
   public var_id : number = 0;
-  public altArray = new Array<AlternateConf[]>();
+  public altMap = new Map<string,AlternateConf[]>();
 
   ngOnInit(): void {
 
@@ -55,24 +55,14 @@ export class StandardComponent implements OnInit {
         console.log(element.conf_id);
         this._alternateService.getAlternateConfByConfid(element.conf_id).subscribe(
           (data)=>{
-            this.altArray.push(data);
-            console.log(this.altArray);
+            this.altMap.set(element.description,data);
           }
         );   
       });
   }
 
 
-  getAlternateDescription(conf_id : number){
-    // this._alternateService.getAlternateConfByConfid(conf_id).subscribe(
-    //   (data)=>{
-    //     this.alternateConfs = data;
-    //     console.log(this.alternateConfs);
-    //   }
-    // );
-  }
-
-  managePrice(event : any, alt : AlternateConf[]){
+  managePrice(event : any){
     console.log(event.target.value);
   }
 

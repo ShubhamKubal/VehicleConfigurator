@@ -23,14 +23,14 @@
         </div>
     </div>
 
-    <div class="row" *ngFor = " let std of configurableAccessoriesConfigurations ; let i=index;" style="margin-top:20px;">
+    <div class="row" *ngFor = " let std of altMap | keyvalue " style="margin-top:20px;">
         <div class="col-md-6">
-        <p><b>{{std.description}} 0</b></p>
+        <p><b>{{std.key}} 0</b></p>
         </div>
         <div class="col-md-6">
-        <select class="form-control" id="segment" (focus) = "getAlternateDescription(std.conf_id)" (change) = "managePrice($event,alternateConfs)">
+        <select class="form-control" id="segment" (change) = "managePrice($event)">
             <option>--------- SELECT-----------</option>
-            <option *ngFor = " let a of altArray[i] " value="{{a.alt_id}}" >{{a.alt_description}}</option>
+            <option *ngFor = " let a of std.value " value="{{a.alt_price}}" >{{a.alt_description}}</option>
         </select>
         </div>
     </div>
