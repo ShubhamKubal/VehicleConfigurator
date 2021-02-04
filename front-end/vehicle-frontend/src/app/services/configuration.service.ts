@@ -30,4 +30,20 @@ export class ConfigurationService {
     return this.http.get<Configuration[]>("http://localhost:8080/api/v1/configurations/accessories/"+var_id);
   }
 
+  getAllConfigurableDefaultFeatures(var_id : number) : Observable<Configuration[]>{
+    return this.http.get<Configuration[]>("http://localhost:8080/api/v1/configurations/default/configurable/"+var_id);
+  }
+
+  getAllConfigurableInteriorFeatures(var_id : number) : Observable<Configuration[]>{
+    return this.http.get<Configuration[]>("http://localhost:8080/api/v1/configurations/interior/configurable/"+var_id);
+  }
+
+  getAllConfigurableExteriorFeatures(var_id : number) : Observable<Configuration[]>{
+    return this.http.get<Configuration[]>("http://localhost:8080/api/v1/configurations/exterior/configurable/"+var_id);
+  }
+
+  getAllConfigurableAccessoriesFeatures(var_id : number) : Observable<Configuration[]>{
+    return this.http.get<Configuration[]>("http://localhost:8080/api/v1/configurations/accessories/configurable/"+var_id);
+  }
+
 }
