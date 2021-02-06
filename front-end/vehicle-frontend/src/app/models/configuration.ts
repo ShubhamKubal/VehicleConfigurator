@@ -7,4 +7,6 @@ export class Configuration {
         public var_id : number){
 
     }
+
+    
 }

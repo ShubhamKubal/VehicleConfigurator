@@ -3,3 +3,15 @@
       INVOICE
     </h3>
 </div>
+
+<div class="row"  style="margin-top:20px;">
+  <ul>
+    <li *ngFor = " let std of selectedConfMap | keyvalue ">
+      {{std.value.alt_description}}
+    </li>
+  </ul>
+
+</div>
+<div class="row"  style="margin-top:20px;">
+  Final Price : {{finalPrice | currency:'INR':true}}
+</div>

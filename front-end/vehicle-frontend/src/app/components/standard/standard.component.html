@@ -25,12 +25,12 @@
 
     <div class="row" *ngFor = " let std of altMap | keyvalue " style="margin-top:20px;">
         <div class="col-md-6">
-        <p><b>{{std.key}} 0</b></p>
+        <p><b>{{std.key}} </b></p>
         </div>
         <div class="col-md-6">
-        <select class="form-control" id="segment" (change) = "managePrice($event)">
-            <option>--------- SELECT-----------</option>
-            <option *ngFor = " let a of std.value " value="{{a.alt_price}}" >{{a.alt_description}}</option>
+        <select class="form-control" id="segment" (change) = "managePrice($event,std.key)">
+            <option>--------- DEFAULT-----------</option>
+            <option *ngFor = " let a of std.value " value="{{a.alt_id}}" >{{a.alt_description}}</option>
         </select>
         </div>
     </div>
@@ -64,4 +64,5 @@
         </nav>
     </div>
 </div>
+<h3>{{currentPrice}}</h3>
 <br><br><br><br><br>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Configuration } from 'src/app/models/configuration';
 import { Variant } from 'src/app/models/variant';
 import { ConfigurationService } from 'src/app/services/configuration.service';
+import { InvoiceService } from 'src/app/services/invoice.service';
 import { VariantService } from 'src/app/services/variant.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class DefaultComponent implements OnInit {
 
   constructor(private _variantService: VariantService,
     private _configurationService: ConfigurationService,
+    private _invoiceService: InvoiceService,
     private _router: Router) { }
 
   var_id : number = 0;
@@ -49,6 +51,7 @@ export class DefaultComponent implements OnInit {
     this._variantService.getVariantByVarid(this.var_id).subscribe((data) => {
         this.variant = data;
         console.log(this.variant);
+        this._invoiceService.setInvoicePrice(this.variant.base_price);
     });
 
   }
