@@ -28,4 +28,8 @@ export class InvoiceService {
     this.invoicePrice = price;
   }
 
+  getSelectedConfMap() : Map<string, AlternateConf>{
+    return this.selectedConfigurationMap;
+  }
+
 }

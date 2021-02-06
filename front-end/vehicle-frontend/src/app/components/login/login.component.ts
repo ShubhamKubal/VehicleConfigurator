@@ -24,9 +24,13 @@ export class LoginComponent implements OnInit {
       (data) =>{
         console.log(data);
         if (data != "0")
+        {
+          this._customerService.setCompanyId(parseInt(data));
           this._router.navigate(['/home']);
+        }
         else
         {
+          this._customerService.setCompanyId(0);
           this.loginalert = "please enter correct username or password";
           this.validatepassword = true;
         }

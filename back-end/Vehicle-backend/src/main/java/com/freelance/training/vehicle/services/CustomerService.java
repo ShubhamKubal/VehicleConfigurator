@@ -1,6 +1,7 @@
 package com.freelance.training.vehicle.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -53,5 +54,14 @@ public class CustomerService {
 			return customers.get(0).getCompany_id().toString();
 		else
 			return "0";
+	}
+	
+	/**
+	 * returns a particular customer by using company_id
+	 * @param companyId
+	 * @return Customer
+	 */
+	public Optional<Customer> findById(String companyId) {
+		return customerRepo.findById(Long.parseLong(companyId));
 	}
 }

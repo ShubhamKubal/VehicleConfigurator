@@ -1,6 +1,7 @@
 package com.freelance.training.vehicle.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -57,6 +58,16 @@ public class CustomerController {
 	@GetMapping("/check/{loginid}/{password}")
 	public String checkCredentials(@PathVariable String loginid,@PathVariable String password) {
 		return customerService.checkLoginCredentials(loginid, password);
+	}
+	
+	/**
+	 * returns a particular customer by using company_id
+	 * @param companyId
+	 * @return Customer
+	 */
+	@GetMapping("/customer/{companyid}")
+	public Optional<Customer> getCustomer(@PathVariable String companyid) {
+		return customerService.findById(companyid);
 	}
 
 }

@@ -8,6 +8,8 @@ import { Customer } from '../models/customer';
 })
 export class CustomerService {
 
+  public companyId : number =0;
+
   constructor(private http : HttpClient) { }
 
   addCustomerDetails(register : Customer) : Observable<Customer[]>{
@@ -17,4 +19,18 @@ export class CustomerService {
   checkCredetials(loginid : string, password : string) : Observable<string>{
     return this.http.get<string>("http://localhost:8080/api/v1/check/"+loginid+"/"+password);
   }
+
+  getCustomerDetails() : Observable<Customer>{
+    return this.http.get<Customer>("http://localhost:8080/api/v1/customer/"+this.companyId); 
+  }
+
+  setCompanyId(companyid : number){
+    this.companyId=companyid;
+  }
+
+  getCompanyId():number{
+    return this.companyId;
+  }
+
+
 }
