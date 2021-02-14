@@ -33,7 +33,7 @@ table creation:
 	);
 	
 	
-	create table Configuration(
+	create table configuration(
 	conf_id INT NOT NULL AUTO_INCREMENT,
 	description VARCHAR(500),
 	type VARCHAR(50) NOT NULL,
@@ -44,13 +44,13 @@ table creation:
 	);
 	
 	
-	create table AlternateConf(
+	create table alternate_conf(
 	alt_id INT NOT NULL AUTO_INCREMENT,
 	alt_description VARCHAR(500),
 	alt_price DECIMAL NOT NULL,
 	conf_id INT,
 	PRIMARY KEY ( alt_id ),
-	FOREIGN KEY (conf_id) REFERENCES Configuration(conf_id)
+	FOREIGN KEY (conf_id) REFERENCES configuration(conf_id)
 	);
 	
 	
@@ -133,123 +133,246 @@ Data Insertion :
 		
 		
 		
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("ARAI Mileage : 20.3 kmpl" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("City Mileage : 12.34 kmpl" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("Fuel Type : petrol" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("Engine displacement : 1199cc" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("Seating Capacity : 5" ,"default" ,"no",1 );					
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("Power Steering" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("Air Conditioner" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("Driver and passenger Airbag" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("Driver Airbag" ,"default" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("Tachometer" ,"internal" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("Electronic Multi-Tripmeter" ,"internal" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("Seat cover" ,"internal" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("Steering Wheel" ,"internal" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("gear-shift selector wrap" ,"internal" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("headlights" ,"external" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("foglights front and rear" ,"external" ,"yes",1 );	
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("exterior mirrors" ,"external" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("wheel covers" ,"external" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("roof carrier" ,"external" ,"yes",1 );		
-	insert into Configuration ( description, type, configurable, var_id )
-		values ("antenna" ,"external" ,"no",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Tachometer" ,"interior" ,"no",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Electronic Multi-Tripmeter" ,"interior" ,"no",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Seat cover" ,"interior" ,"yes",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Steering Wheel" ,"interior" ,"yes",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("gear-shift selector wrap" ,"interior" ,"yes",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("headlights" ,"exterior" ,"yes",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("foglights front and rear" ,"exterior" ,"yes",1 );	
+	insert into configuration ( description, type, configurable, var_id )
+		values ("exterior mirrors" ,"exterior" ,"yes",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("wheel covers" ,"exterior" ,"yes",1 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("roof carrier" ,"exterior" ,"yes",1 );		
+	insert into configuration ( description, type, configurable, var_id )
+		values ("antenna" ,"exterior" ,"no",1 );
+	insert into configuration ( description, type, configurable, var_id )
 		values ("music system" ,"accessories" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("car cover" ,"accessories" ,"yes",1 );
-	insert into Configuration ( description, type, configurable, var_id )
+	insert into configuration ( description, type, configurable, var_id )
 		values ("radio" ,"accessories" ,"yes",1 );
+		
+	--------------------------------------------------------------------------------------------
+	insert into configuration ( description, type, configurable, var_id )
+		values ("ARAI Mileage : 19.62 kmpl" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("City Mileage : 12.34 kmpl" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Fuel Type : diesel" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Engine displacement : 1998cc" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Seating Capacity : 5" ,"default" ,"no",7 );					
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Power Steering" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Air Conditioner" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Driver and passenger Airbag" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Driver Airbag" ,"default" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Tachometer" ,"interior" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Electronic Multi-Tripmeter" ,"interior" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Seat cover" ,"interior" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("Steering Wheel" ,"interior" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("gear-shift selector wrap" ,"interior" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("headlights" ,"exterior" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("foglights front and rear" ,"exterior" ,"yes",7 );	
+	insert into configuration ( description, type, configurable, var_id )
+		values ("exterior mirrors" ,"exterior" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("wheel covers" ,"exterior" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("roof carrier" ,"exterior" ,"yes",7 );		
+	insert into configuration ( description, type, configurable, var_id )
+		values ("antenna" ,"exterior" ,"no",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("music system" ,"accessories" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("car cover" ,"accessories" ,"yes",7 );
+	insert into configuration ( description, type, configurable, var_id )
+		values ("radio" ,"accessories" ,"yes",7 );
+-----------------------------------------------------------------------------------------------------------------------------------		
 	
 	
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 7, "Air conditioner 1", 15000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 7, "Air conditioner 2", 20000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 7, "Air conditioner 3", 25000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 8, "Passenger airbags 1", 8000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 8, "Passenger airbags 2", 10000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 8, "Passenger airbags 3", 12000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 9, "Driver airbags 1", 5000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 9, "Driver airbags 2", 6500 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 9, "Driver airbags 3", 8000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 12, "Seat Cover 1", 4000 );	
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 12, "Seat Cover 2", 6000 );	
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 12, "Seat Cover 3", 8000 );	
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 12, "Seat Cover 4", 10000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 13, "Steering wheel 1", 5000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 13, "Steering wheel 2", 8000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 14, "gear-shift selector wrap 1", 1500 );					
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 14, "gear-shift selector wrap 2", 2500 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 15, "headlights 1", 5000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 15, "headlights 2", 8000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 15, "headlights 3", 12000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 16, "foglights 1", 7000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 16, "foglights 2", 10000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 17, "exterior mirror 1", 1500 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 17, "exterior mirror 2", 1500 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 17, "exterior mirror 3", 3000 );				
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 18, "wheel covers 1", 4000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 18, "wheel covers 2", 16000 );		
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 19, "roof carrier 1", 15000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 19, "roof carrier 2", 20000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 19, "roof carrier 3", 30000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 21, "music system 1", 12000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 21, "music system 2", 25000 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 21, "music system 3", 40000 );				
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 22, "car cover 1", 1500 );
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 22, "car cover 2", 3000 );											
-	insert into AlternateConf ( conf_id, alt_description, alt_price )
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
 		values ( 23, "radio 1", 3000 );		
+----------------------------------------------------------
+
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 30, "Air conditioner 1 bmw", 15000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 30, "Air conditioner 2 bmw", 20000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 30, "Air conditioner 3 bmw", 25000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 31, "Passenger airbags 1 bmw", 8000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 31, "Passenger airbags 2 bmw", 10000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 31, "Passenger airbags 3 bmw", 12000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 32, "Driver airbags 1 bmw", 5000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 32, "Driver airbags 2 bmw", 6500 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 32, "Driver airbags 3 bmw", 8000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 35, "Seat Cover 1 bmw", 4000 );	
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 35, "Seat Cover 2 bmw", 6000 );	
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 35, "Seat Cover 3 bmw", 8000 );	
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 35, "Seat Cover 4 bmw", 10000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 36, "Steering wheel 1 bmw", 5000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 36, "Steering wheel 2 bmw", 8000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 37, "gear-shift selector wrap 1 bmw", 1500 );					
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 37, "gear-shift selector wrap 2 bmw", 2500 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 38, "headlights 1 bmw", 5000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 38, "headlights 2 bmw", 8000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 38, "headlights 3 bmw", 12000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 39, "foglights 1 bmw", 7000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 39, "foglights 2 bmw", 10000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 40, "exterior mirror 1 bmw", 1500 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 40, "exterior mirror 2 bmw", 1500 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 40, "exterior mirror 3 bmw", 3000 );				
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 41, "wheel covers 1 bmw", 4000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 41, "wheel covers 2 bmw", 16000 );		
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 42, "roof carrier 1 bmw", 15000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 42, "roof carrier 2 bmw", 20000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 42, "roof carrier 3 bmw", 30000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 44, "music system 1 bmw", 12000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 44, "music system 2 bmw", 25000 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 44, "music system 3 bmw", 40000 );				
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 45, "car cover 1 bmw", 1500 );
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 45, "car cover 2 bmw", 3000 );											
+	insert into alternate_conf ( conf_id, alt_description, alt_price )
+		values ( 46, "radio 1 bmw", 3000 );

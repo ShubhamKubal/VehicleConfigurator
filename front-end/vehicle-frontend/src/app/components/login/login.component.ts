@@ -25,11 +25,14 @@ export class LoginComponent implements OnInit {
         console.log(data);
         if (data != "0")
         {
+          this._customerService.emitEvent(true);
+          this._customerService.setLoginFlag(true);
           this._customerService.setCompanyId(parseInt(data));
           this._router.navigate(['/home']);
         }
         else
         {
+          this._customerService.emitEvent(false);
           this._customerService.setCompanyId(0);
           this.loginalert = "please enter correct username or password";
           this.validatepassword = true;

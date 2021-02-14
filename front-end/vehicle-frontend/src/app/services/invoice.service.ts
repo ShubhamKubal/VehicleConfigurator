@@ -28,6 +28,10 @@ export class InvoiceService {
     this.invoicePrice = price;
   }
 
+  setSelectedMapToNew(){
+    this.selectedConfigurationMap = new Map<string, AlternateConf>();
+  }
+
   getSelectedConfMap() : Map<string, AlternateConf>{
     return this.selectedConfigurationMap;
   }

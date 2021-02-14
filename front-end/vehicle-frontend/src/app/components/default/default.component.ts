@@ -27,6 +27,8 @@ export class DefaultComponent implements OnInit {
   variant : Variant = new Variant(0,'',0,0,0,0,'');
 
   ngOnInit(): void {
+
+    this._invoiceService.setSelectedMapToNew();
     this.var_id = this._variantService.getVariantId();
     console.log(this.var_id);
 

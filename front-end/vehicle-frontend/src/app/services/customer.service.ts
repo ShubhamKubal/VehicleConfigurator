@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Customer } from '../models/customer';
 
 @Injectable({
@@ -9,6 +9,8 @@ import { Customer } from '../models/customer';
 export class CustomerService {
 
   public companyId : number =0;
+  public loginFlag : boolean = false;
+  public loggedInID = new Subject();
 
   constructor(private http : HttpClient) { }
 
@@ -30,6 +32,18 @@ export class CustomerService {
 
   getCompanyId():number{
     return this.companyId;
+  }
+
+  setLoginFlag(flag : boolean){
+    this.loginFlag = flag;
+  }
+
+  getLoginFlag() : boolean{
+    return this.loginFlag;
+  }
+
+  emitEvent(flag : boolean){
+    this.loggedInID.next(flag);
   }
 
 

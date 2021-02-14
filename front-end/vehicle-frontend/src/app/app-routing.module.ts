@@ -10,18 +10,19 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { StandardComponent } from './components/standard/standard.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { HomeGuard } from './guards/home.guard';
 
 const routes: Routes = [
   { path: '', component:WelcomeComponent },
   { path: 'register', component:RegistrationComponent},
   { path: 'login', component:LoginComponent },
-  { path: 'home', component:HomeComponent },
-  { path: 'default', component:DefaultComponent},
-  { path: 'configure', component:StandardComponent},
-  { path: 'interior', component:InteriorComponent},
-  { path: 'exterior', component:ExteriorComponent},
-  { path: 'accessories', component:AccessoriesComponent},
-  { path: 'invoice',component:InvoiceComponent}
+  { path: 'home', component:HomeComponent, canActivate : [HomeGuard] },
+  { path: 'default', component:DefaultComponent, canActivate : [HomeGuard] },
+  { path: 'configure', component:StandardComponent, canActivate : [HomeGuard] },
+  { path: 'interior', component:InteriorComponent, canActivate : [HomeGuard] },
+  { path: 'exterior', component:ExteriorComponent, canActivate : [HomeGuard] },
+  { path: 'accessories', component:AccessoriesComponent, canActivate : [HomeGuard] },
+  { path: 'invoice',component:InvoiceComponent, canActivate : [HomeGuard] }
 ];
 
 @NgModule({
