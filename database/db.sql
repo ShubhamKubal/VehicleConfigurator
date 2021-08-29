@@ -1,5 +1,5 @@
 open mysql terminal on Ubuntu : 
-	sudo mysql -u root
+	mysql -u root -p
 database creation : 
 	show databases;
 	create database vehicleconfigurator;
